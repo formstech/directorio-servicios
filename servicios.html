@@ -8,22 +8,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
 
 body{
-background:#f4f7fb;
+background:#f5f7fa;
 color:#333;
 }
 
 header{
 background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:white;
-padding:60px 20px;
+padding:70px 20px;
 text-align:center;
 }
 
 header h1{
-font-size:38px;
+font-size:42px;
 font-weight:800;
 }
 
@@ -38,7 +43,7 @@ margin-top:30px;
 }
 
 .search-box input{
-padding:14px;
+padding:15px;
 width:90%;
 max-width:500px;
 border:none;
@@ -56,7 +61,31 @@ margin:auto;
 .section h2{
 text-align:center;
 margin-bottom:40px;
-font-size:28px;
+font-size:30px;
+}
+
+.categories{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+margin-bottom:40px;
+}
+
+.category-btn{
+padding:10px 20px;
+border-radius:25px;
+border:none;
+background:#e0e6ed;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+}
+
+.category-btn:hover,
+.category-btn.active{
+background:#2c5364;
+color:white;
 }
 
 .grid{
@@ -74,7 +103,7 @@ transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 }
 
 .card img{
@@ -90,7 +119,7 @@ font-size:18px;
 margin-bottom:8px;
 }
 
-.category{
+.tag{
 display:inline-block;
 background:#2c5364;
 color:white;
@@ -130,56 +159,98 @@ font-size:14px;
 
 <header>
 <h1>Directorio Profesional</h1>
-<p>Encuentra los mejores servicios cerca de ti</p>
+<p>Encuentra servicios confiables en un solo lugar</p>
 
 <div class="search-box">
-<input type="text" placeholder="Buscar servicio...">
+<input type="text" id="searchInput" placeholder="Buscar servicio...">
 </div>
 </header>
 
 <section class="section">
+
+<h2>Categorías</h2>
+
+<div class="categories">
+<button class="category-btn active" onclick="filterCategory('all')">Todos</button>
+<button class="category-btn" onclick="filterCategory('salud')">Salud</button>
+<button class="category-btn" onclick="filterCategory('aseguradoras')">Aseguradoras</button>
+<button class="category-btn" onclick="filterCategory('servicios')">Servicios en General</button>
+<button class="category-btn" onclick="filterCategory('consultores')">Consultores</button>
+</div>
+
 <h2>Servicios Destacados</h2>
 
-<div class="grid">
+<div class="grid" id="cardsContainer">
 
-<div class="card">
+<div class="card" data-category="salud">
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
-<div class="category">Salud</div>
-<h3>Clínica Dental Sonrisa</h3>
-<p>Especialistas en ortodoncia y estética dental.</p>
+<div class="tag">Salud</div>
+<h3>Clínica Integral Vida</h3>
+<p>Consultas médicas y especialidades.</p>
 <a href="#">Ver Perfil</a>
 </div>
 
-<div class="card">
+<div class="card" data-category="aseguradoras">
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
-<div class="category">Tecnología</div>
-<h3>Form Tech Consultores</h3>
-<p>Automatización, estadística y soluciones TI.</p>
+<div class="tag">Aseguradoras</div>
+<h3>Protección Total Seguros</h3>
+<p>Seguros de vida, auto y gastos médicos.</p>
 <a href="#">Ver Perfil</a>
 </div>
 
-<div class="card">
+<div class="card" data-category="servicios">
 <img src="https://randomuser.me/api/portraits/women/65.jpg">
-<div class="category">Eventos</div>
-<h3>Crazy Kids Eventos</h3>
-<p>Fiestas infantiles temáticas y animación profesional.</p>
+<div class="tag">Servicios</div>
+<h3>Eventos Premium</h3>
+<p>Organización de eventos y fiestas.</p>
 <a href="#">Ver Perfil</a>
 </div>
 
-<div class="card">
+<div class="card" data-category="consultores">
 <img src="https://randomuser.me/api/portraits/men/75.jpg">
-<div class="category">Consultoría</div>
-<h3>Asesor Financiero Pro</h3>
-<p>Planes de inversión y protección patrimonial.</p>
+<div class="tag">Consultores</div>
+<h3>Form Tech Consultores</h3>
+<p>Soluciones tecnológicas y automatización.</p>
 <a href="#">Ver Perfil</a>
 </div>
 
 </div>
+
 </section>
 
 <footer>
-© 2026 Directorio Profesional · Todos los derechos reservados
+© 2026 Directorio Profesional · Plataforma de Servicios
 </footer>
+
+<script>
+
+function filterCategory(category){
+let cards = document.querySelectorAll('.card');
+let buttons = document.querySelectorAll('.category-btn');
+
+buttons.forEach(btn => btn.classList.remove('active'));
+event.target.classList.add('active');
+
+cards.forEach(card => {
+if(category === 'all'){
+card.style.display = 'block';
+} else {
+card.style.display = card.dataset.category === category ? 'block' : 'none';
+}
+});
+}
+
+document.getElementById("searchInput").addEventListener("keyup", function(){
+let value = this.value.toLowerCase();
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+let text = card.innerText.toLowerCase();
+card.style.display = text.includes(value) ? "block" : "none";
+});
+});
+
+</script>
 
 </body>
 </html>
