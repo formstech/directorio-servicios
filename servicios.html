@@ -1,9 +1,9 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Directorio Profesional</title>
+<title>Servicios en General | Directorio Profesional</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -16,113 +16,149 @@ font-family:'Montserrat',sans-serif;
 }
 
 body{
-background:#f4f7fb;
+background:linear-gradient(135deg,#f0f4ff,#f9fbff);
 color:#333;
 }
 
 header{
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background:linear-gradient(135deg,#1d4350,#a43931);
 color:white;
 padding:80px 20px;
 text-align:center;
+position:relative;
+overflow:hidden;
 }
 
 header h1{
-font-size:42px;
+font-size:40px;
 font-weight:800;
 }
 
 header p{
-margin-top:10px;
+margin-top:15px;
+opacity:.95;
 font-size:18px;
-opacity:.9;
 }
 
-.search-box{
-margin-top:30px;
-}
-
-.search-box input{
-padding:15px;
-width:90%;
-max-width:500px;
-border:none;
-border-radius:30px;
-font-size:16px;
-outline:none;
-}
-
-.section{
-padding:70px 20px;
+.container{
 max-width:1200px;
 margin:auto;
+padding:70px 20px;
 }
 
-.section h2{
-text-align:center;
+.back{
+display:inline-block;
 margin-bottom:40px;
-font-size:30px;
+text-decoration:none;
+color:#a43931;
+font-weight:700;
+transition:.3s;
 }
 
-.categories{
+.back:hover{
+color:#1d4350;
+}
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
-.category-card{
+.card{
 background:white;
 padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+border-radius:22px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:.4s;
 text-align:center;
-transition:.3s;
-text-decoration:none;
-color:#333;
+position:relative;
+overflow:hidden;
 }
 
-.category-card:hover{
-transform:translateY(-6px);
-background:#2c5364;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 45px rgba(0,0,0,0.15);
+}
+
+.badge{
+position:absolute;
+top:15px;
+right:15px;
+background:#ff4b2b;
 color:white;
+padding:6px 14px;
+border-radius:20px;
+font-size:12px;
+font-weight:700;
 }
 
-.category-card h3{
-margin-bottom:10px;
-font-size:20px;
+.card img{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:20px;
+border:4px solid #f3f3f3;
 }
 
-.category-card p{
+.card h3{
+margin-bottom:12px;
+font-size:22px;
+}
+
+.card p{
+font-size:15px;
+margin-bottom:20px;
+color:#555;
+}
+
+.card a{
+display:inline-block;
+background:linear-gradient(135deg,#ff416c,#ff4b2b);
+color:white;
+padding:12px 28px;
+border-radius:30px;
+text-decoration:none;
+font-weight:700;
 font-size:14px;
-opacity:.8;
+transition:.3s;
 }
 
-.highlight{
-background:white;
-margin-top:60px;
-padding:50px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+.card a:hover{
+transform:scale(1.05);
+}
+
+.share-section{
+margin-top:70px;
 text-align:center;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.highlight h2{
+.share-section h2{
+margin-bottom:15px;
+font-size:24px;
+}
+
+.share-section p{
+color:#555;
 margin-bottom:20px;
 }
 
-.highlight a{
-display:inline-block;
-margin-top:20px;
-background:#0f2027;
+.share-section a{
+background:#1d4350;
 color:white;
-padding:12px 30px;
+padding:12px 25px;
 border-radius:30px;
 text-decoration:none;
 font-weight:600;
 }
 
 footer{
-background:#0f2027;
+background:#1d4350;
 color:white;
 text-align:center;
 padding:30px;
@@ -135,54 +171,38 @@ font-size:14px;
 <body>
 
 <header>
-<h1>Directorio Profesional</h1>
-<p>Encuentra servicios confiables en un solo lugar</p>
-
-<div class="search-box">
-<input type="text" placeholder="Buscar servicio próximamente...">
-</div>
+<h1>Servicios en General</h1>
+<p>Descubre proveedores confiables y recomendados ⭐</p>
 </header>
 
-<section class="section">
+<div class="container">
 
-<h2>Categorías</h2>
+<a href="index.html" class="back">← Volver al Directorio</a>
 
-<div class="categories">
+<div class="grid">
 
-<a href="salud.html" class="category-card">
-<h3>Salud</h3>
-<p>Clínicas, doctores y especialistas</p>
-</a>
-
-<a href="aseguradoras.html" class="category-card">
-<h3>Aseguradoras</h3>
-<p>Seguros de vida, auto y gastos médicos</p>
-</a>
-
-<a href="sg.html" class="category-card">
-<h3>Servicios en General</h3>
-<p>Eventos, mantenimiento y más</p>
-</a>
-
-<a href="consultores.html" class="category-card">
-<h3>Consultores</h3>
-<p>Tecnología, finanzas y asesoría profesional</p>
-</a>
+<!-- TARJETA CRAZY KIDS -->
+<div class="card">
+<div class="badge">DESTACADO</div>
+<img src="https://raw.githubusercontent.com/formstech/TDP/refs/heads/main/images.jpg" alt="Crazy Kids Eventos">
+<h3>Crazy Kids Eventos</h3>
+<p>🎉 Fiestas infantiles temáticas, animación profesional y diversión garantizada.</p>
+<a href="https://formstech.github.io/TDP/crazykids.html">Ver Tarjeta Completa</a>
+</div>
 
 </div>
 
-<div class="highlight">
-<h2>¿Quieres aparecer en nuestro directorio?</h2>
-<p>Impulsa tu presencia digital con tu tarjeta profesional y visibilidad en nuestro listado de servicios.</p>
-<a href="#">Solicitar Información</a>
+<div class="share-section">
+<h2>¿Te gustó algún servicio?</h2>
+<p>Compártelo con tus amigos y ayuda a crecer a los negocios locales 🚀</p>
+<a href="#">Compartir Directorio</a>
 </div>
 
-</section>
+</div>
 
 <footer>
-© 2026 Directorio Profesional · Plataforma de Servicios
+© 2026 Directorio Profesional · Servicios en General
 </footer>
 
 </body>
 </html>
-
