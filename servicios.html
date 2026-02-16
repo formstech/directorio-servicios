@@ -1,67 +1,27 @@
-Skip to content
-formstech
-directorio-servicios
-Repository navigation
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Commit 2692062
-formstech
-formstech
-authored
-3 minutes ago
-·
-·
-Verified
-Update servicios.html
-main
-1 parent 
-dda874b
- commit 
-2692062
-File tree
-Filter files…
-servicios.html
-1 file changed
-+110
--90
-lines changed
-Search within code
- 
-‎servicios.html‎
-+110
--90
-Lines changed: 110 additions & 90 deletions
-Original file line number	Diff line number	Diff line change
-@@ -1,9 +1,9 @@
-<!DOCTYPE html><!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Directorio Profesional</title>
 <title>Servicios en General | Directorio Profesional</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-@@ -16,113 +16,149 @@
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
 }
 
 body{
-background:#f4f7fb;
 background:linear-gradient(135deg,#f0f4ff,#f9fbff);
 color:#333;
 }
 
 header{
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 background:linear-gradient(135deg,#1d4350,#a43931);
 color:white;
 padding:80px 20px;
@@ -71,87 +31,57 @@ overflow:hidden;
 }
 
 header h1{
-font-size:42px;
 font-size:40px;
 font-weight:800;
 }
 
 header p{
-margin-top:10px;
 margin-top:15px;
 opacity:.95;
 font-size:18px;
-opacity:.9;
 }
 
-.search-box{
-margin-top:30px;
-}
-.search-box input{
-padding:15px;
-width:90%;
-max-width:500px;
-border:none;
-border-radius:30px;
-font-size:16px;
-outline:none;
-}
-.section{
-padding:70px 20px;
 .container{
 max-width:1200px;
 margin:auto;
 padding:70px 20px;
 }
 
-.section h2{
-text-align:center;
 .back{
 display:inline-block;
 margin-bottom:40px;
-font-size:30px;
 text-decoration:none;
 color:#a43931;
 font-weight:700;
 transition:.3s;
 }
+
 .back:hover{
 color:#1d4350;
 }
 
-.categories{
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
-.category-card{
 .card{
 background:white;
 padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
 border-radius:22px;
 box-shadow:0 15px 35px rgba(0,0,0,0.08);
 transition:.4s;
 text-align:center;
-transition:.3s;
-text-decoration:none;
-color:#333;
 position:relative;
 overflow:hidden;
 }
+
 .card:hover{
 transform:translateY(-10px);
 box-shadow:0 20px 45px rgba(0,0,0,0.15);
 }
 
-.category-card:hover{
-transform:translateY(-6px);
-background:#2c5364;
 .badge{
 position:absolute;
 top:15px;
@@ -163,6 +93,7 @@ border-radius:20px;
 font-size:12px;
 font-weight:700;
 }
+
 .card img{
 width:100px;
 height:100px;
@@ -172,20 +103,17 @@ margin-bottom:20px;
 border:4px solid #f3f3f3;
 }
 
-.category-card h3{
-margin-bottom:10px;
-font-size:20px;
 .card h3{
 margin-bottom:12px;
 font-size:22px;
 }
 
-.category-card p{
 .card p{
 font-size:15px;
 margin-bottom:20px;
 color:#555;
 }
+
 .card a{
 display:inline-block;
 background:linear-gradient(135deg,#ff416c,#ff4b2b);
@@ -195,45 +123,35 @@ border-radius:30px;
 text-decoration:none;
 font-weight:700;
 font-size:14px;
-opacity:.8;
 transition:.3s;
 }
+
 .card a:hover{
 transform:scale(1.05);
 }
 
-.highlight{
 .share-section{
 margin-top:70px;
 text-align:center;
 background:white;
-margin-top:60px;
-padding:50px;
-border-radius:25px;
 padding:40px;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
-text-align:center;
 }
 
-.highlight h2{
 .share-section h2{
 margin-bottom:15px;
 font-size:24px;
 }
+
 .share-section p{
 color:#555;
 margin-bottom:20px;
 }
 
-.highlight a{
-display:inline-block;
-margin-top:20px;
-background:#0f2027;
 .share-section a{
 background:#1d4350;
 color:white;
-padding:12px 30px;
 padding:12px 25px;
 border-radius:30px;
 text-decoration:none;
@@ -241,49 +159,29 @@ font-weight:600;
 }
 
 footer{
-background:#0f2027;
 background:#1d4350;
 color:white;
 text-align:center;
 padding:30px;
-@@ -135,54 +171,38 @@
+margin-top:80px;
+font-size:14px;
+}
+</style>
+</head>
+
 <body>
 
 <header>
-<h1>Directorio Profesional</h1>
-<p>Encuentra servicios confiables en un solo lugar</p>
-<div class="search-box">
-<input type="text" placeholder="Buscar servicio próximamente...">
-</div>
 <h1>Servicios en General</h1>
 <p>Descubre proveedores confiables y recomendados ⭐</p>
 </header>
 
-<section class="section">
-<h2>Categorías</h2>
 <div class="container">
 
-<div class="categories">
 <a href="index.html" class="back">← Volver al Directorio</a>
 
-<a href="salud.html" class="category-card">
-<h3>Salud</h3>
-<p>Clínicas, doctores y especialistas</p>
-</a>
 <div class="grid">
 
-<a href="aseguradoras.html" class="category-card">
-<h3>Aseguradoras</h3>
-<p>Seguros de vida, auto y gastos médicos</p>
-</a>
-<a href="sg.html" class="category-card">
-<h3>Servicios en General</h3>
-<p>Eventos, mantenimiento y más</p>
-</a>
-<a href="consultores.html" class="category-card">
-<h3>Consultores</h3>
-<p>Tecnología, finanzas y asesoría profesional</p>
-</a>
 <!-- TARJETA CRAZY KIDS -->
 <div class="card">
 <div class="badge">DESTACADO</div>
@@ -295,31 +193,17 @@ padding:30px;
 
 </div>
 
-<div class="highlight">
-<h2>¿Quieres aparecer en nuestro directorio?</h2>
-<p>Impulsa tu presencia digital con tu tarjeta profesional y visibilidad en nuestro listado de servicios.</p>
-<a href="#">Solicitar Información</a>
 <div class="share-section">
 <h2>¿Te gustó algún servicio?</h2>
 <p>Compártelo con tus amigos y ayuda a crecer a los negocios locales 🚀</p>
 <a href="#">Compartir Directorio</a>
 </div>
 
-</section>
 </div>
 
 <footer>
-© 2026 Directorio Profesional · Plataforma de Servicios
 © 2026 Directorio Profesional · Servicios en General
 </footer>
 
 </body>
 </html>
-0 commit comments
-Comments
-0
- (0)
-Comment
-You're not receiving notifications from this thread.
-
-
